@@ -1,0 +1,166 @@
+<app-nav-bar></app-nav-bar>
+<div class="container " style="margin-left: 48px; font-family: 'popins';">
+  <div class="col col-xxl-4 align-left">
+    <div class="row align-left">
+      <div class="container">
+        <div class="row mt-0">
+          <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div>
+
+
+
+
+              <img src="assets/images/list.svg" alt="" height="20px" width="20px" alt=""
+              
+             
+              
+              
+              style="margin-top: 2px 2px padding-top=20px">
+              
+              
+              
+              
+              <!-- <h3 style="font-weight: bold;">Alerts</h3> -->
+              
+              
+              
+              
+              <b>Alerts</b>
+              
+              
+              
+              
+              </div>
+              
+              
+              
+              
+              <div class="flex">
+              
+              
+              
+              
+              <input type="text" placeholder="Search" class="form-control" style="margin-left: 8px;">
+              
+              
+              
+              
+              <img src="assets/images/search.svg" style="margin-left: -30px; cursor: pointer;margin-top: 10px; height: 17px;" class="fa fa-lock form-control-feedback">
+              
+              
+              
+              
+              <button type="button" class="btn btn-warning searchbtn" style="margin-left: 25px;"><i class="fa fa-filter fa-flip-horizontal" style="color: #ffffff;"></i></button>
+              
+              
+              
+              
+              </div>
+              
+              
+              
+              
+              <div class="search-bar align-center">
+              
+              
+              
+              
+              </div>
+              
+              
+              
+              
+              <div class="filter">
+              
+              
+              
+              
+              <div class="row">
+              
+              
+              
+              
+              <div class="col">All Request</div>
+              
+              
+              
+              
+              </div>
+              
+              
+              
+              
+              </div>
+              
+              
+            <div class="filter">
+              <div class="row">
+                <div class="col">
+                  Filter
+                </div>
+                <div class="col">
+                 All type
+                </div>
+                <div class="col">
+                  Status
+                </div>
+                <div class="col">
+                  Last 5 Days
+                </div>
+              </div>
+            </div>
+            <div class="card text-center" *ngFor="let i of surgeries" style="width: 28rem; height: 14.5rem;">
+              <div class="card-body" style="width: 28rem; height: 5rem;">
+                <div>
+                  <button type="button" class="btn align-left b1 ">Ticket Id:{{i.ticket_id}}</button>
+                  <button type="button" class="btn btn-outline-primary align-left b2">Order</button>
+                </div>
+                <div
+                  [ngClass]="{High:surgeries.priority=='high',high:surgeries.priority=='very-High',Normal:surgeries.priority=='Normal'}">
+                </div>
+                <select formControlName="website" class="btn dropdown-toggle align-right">
+                  <!-- <option selected style="background-color: rgb(187, 187, 187);">{{i.priority}}</option>  -->
+                  <option value="high">High</option>
+                  <option value="very-high">Very-High</option>
+                  <option value="normal">Normal</option>
+                </select>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title align-left">{{i.surgery_name}}</h5>
+                <br>
+                <br>
+                <img class="align-left t1" src="assets/images/Time.svg" height="20px" width="20px" alt="">
+                <h6 class="align-left t2 text-secondary">{{i.time}} {{i.date}}</h6>
+              </div>
+              <div class="card-body text-body-secondary">
+                <img class="align-left t1" src="assets/images/drill.png" height="20px" width="20px" alt="">
+                <h6 class="align-left t2 text-secondary">{{i.order_item_count}}</h6>
+                <!-- <img class="align-right t1" src="assets/images/person.svg" height="25px" width="25px" alt=""> -->
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle align-right"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="assets/images/person.svg" alt="Icon" class="icon-image">
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" (click)="updateAssignedAgentClick(i.id,'Athulya')">Athulya</a></li>
+                    <li><a class="dropdown-item" href="#" (click)="updateAssignedAgentClick(i.id,'Delma')">Delma</a></li>
+                    <li><a class="dropdown-item" href="#" (click)="updateAssignedAgentClick(i.id,'Gokul')">Gokul</a></li>
+                    <li><a class="dropdown-item" href="#" (click)="updateAssignedAgentClick(i.id,'Robin Xavier')">Robin Xavier</a></li>
+                    <li><a class="dropdown-item" href="#" (click)="updateAssignedAgentClick(i.id,'Alexander Jacob')">Alexander Jacob</a></li>
+                    <li><a class="dropdown-item" href="#" (click)="updateAssignedAgentClick(i.id,'James Vargies')">James Vargies</a></li>
+                  </ul>
+                </div>
+                <h6 class="align-right t2 text-secondary">
+                  <select formControlName="website" class="btn dropdown-toggle align-right"> 
+                    <option selected style="background-color: rgb(187, 187, 187);">{{i.status}}</option>
+                    <option value="very-high">Accepted</option>
+                    <option value="high">Pending</option>
+                    <option value="normal">Rejected</option>
+                  </select>
+                  <img class="align-right t1" src="assets/images/activity.svg" height="35px" width="25px" alt="">
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
