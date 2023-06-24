@@ -1,0 +1,200 @@
+<app-nav-bar></app-nav-bar>
+<div class="container " style="margin-left: 48px; font-family:poppins;">
+  <div class="col col-xxl-4 align-left">
+    <div class="row align-left">
+      <div class="container">
+        <div class="row mt-0">
+          <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div>
+              <img src="assets/images/list.svg" alt="" height="20px" width="20px" alt=""
+                style="margin-top: 2px 2px padding-top=20px">
+              <b>Alerts</b>
+            </div>
+            <div class="flex" style="margin-top: 10px;">
+              <input type="text" placeholder="Search" class="form-control" style="margin-left: 8px;">
+              <img src="assets/images/search.svg"
+                style="margin-left: -30px; cursor: pointer;margin-top: 10px; height: 17px;"
+                class="fa fa-lock form-control-feedback">
+              <button type="button" class="btn btn-warning searchbtn" style="margin-left: 25px;"><i
+                  class="fa fa-filter fa-flip-horizontal" style="color: #ffffff;"></i></button>
+            </div>
+            <div class="search-bar align-center">
+            </div>
+            <div class="filterA" style="margin-top: 10px;">
+              <div class="row">
+                <div class="col position-relative mt-1" style="color:rgb(225, 166, 26) ; font-size: small; margin-left: 10;">All Request
+                  <span class="position-absolute translate-middle badge rounded-pill bg-primary"
+                    style="margin-left: 18px; margin-top: 10px;"> 15
+                  </span>
+                </div>
+                <hr class="hrline">
+                <div class="col mt-1" style="margin-right: 100px; margin-left: 30px; font-size: small; color: gray;">
+                  Demo Request
+                  <span class="position-absolute translate-middle badge rounded-pill bg-primary"
+                    style="margin-left: 18px; margin-top: 10px;"> 9
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter" style="margin-top: 0px;">
+            <div class="row">
+              <div class="col"
+                style="margin-left: 5px;margin-top: 5px; font-size:small;font-weight: bold; margin-bottom: 15px;">
+                Filter
+              </div>
+              <div class="col">
+                <!-- All type -->
+                <select aria-placeholder="Select" style="font-size: small;" class="btn btn-sm dropdown-toggle">
+                  <option disabled="disabled" selected="selected" style="display:none;">All Type</option>
+                  <option value="">Order</option>
+                  <option value="">Return</option>
+                </select>
+              </div>
+              <div class="col">
+                <!-- Status -->
+                <select aria-placeholder="Select" style="font-size: small;" class="btn btn-sm dropdown-toggle">
+                  <option disabled="disabled" selected="selected" style="display:none;">Status</option>
+                  <option value="high">Accepted</option>
+                  <option value="very-high">Pending</option>
+                  <option value="normal">Rejected</option>
+                </select>
+              </div>
+              <div class="col">
+                <!-- Last 5 Days -->
+                <select aria-placeholder="Select" style="font-size: small;" class="btn btn-sm dropdown-toggle">
+                  <option disabled="disabled" selected="selected" style="display:none;">Last 5 days</option>
+                  <option value="high">This Month</option>
+                  <option value="very-high">This Week</option>
+                  <option value="normal">Today</option>
+                </select>
+              </div>
+            </div>
+            <div class="card" *ngFor="let i of surgeries" style="width: 27rem;">
+              <div class="card-body">
+                <div class="align-left">
+                  <button type="button " class="btn btn-sm b1 ">Ticket Id:{{i.ticket_id}}</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary b2">Order</button>
+                </div>
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle align-right" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="priority-icon"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" [attr.fill]="priorityColor[i.priority]" class="bi bi-square-fill" viewBox="0 0 16 16">
+                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
+                      </svg></span>
+                    {{ i.priority }}
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">Very High</a></li>
+                    <li><a class="dropdown-item">High</a></li>
+                    <li><a class="dropdown-item">Normal</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-body" style="padding-top: 0;">
+                <div class="row">
+                  <div class="col">
+                    <h6 class="card-title" style="font-size: small; font-weight: bold;">{{i.surgery_name}}</h6>
+                    <img class="align-left t1" src="assets/images/Time.svg" alt="">
+                    <h6 class="align-left t2 text-secondary">{{i.time}} {{i.date}}</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body" style="padding-top: 0; padding-bottom: 0;">
+                <img class="align-left" src="assets/images/drill.png" height="15px" width="15px" alt="">
+                <h6 class="align-left text-secondary t3">{{i.order_item_count}} </h6>
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle align-right" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <img src="assets/images/person.svg" alt="Icon" class="icon-image">
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" (click)="updateAssignedAgentClick(i.id,'Athulya')">Athulya</a>
+                    </li>
+                    <li><a class="dropdown-item" (click)="updateAssignedAgentClick(i.id,'Delma')">Delma</a>
+                    </li>
+                    <li><a class="dropdown-item" (click)="updateAssignedAgentClick(i.id,'Gokul')">Gokul</a>
+                    </li>
+                    <li><a class="dropdown-item" (click)="updateAssignedAgentClick(i.id,'Robin Xavier')">Robin Xavier</a></li>
+                    <li><a class="dropdown-item" (click)="updateAssignedAgentClick(i.id,'Alexander Jacob')">Alexander Jacob</a></li>
+                    <li><a class="dropdown-item" (click)="updateAssignedAgentClick(i.id,'James Vargies')">James Varghese</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown" style="font-size: small;">
+                  <button class="btn btn-light dropdown-toggle align-right" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Accepted
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">Accepted</a></li>
+                    <li><a class="dropdown-item">Rejected</a></li>
+                    <li><a class="dropdown-item">Pending</a></li>
+                  </ul>
+                </div>
+                <img class="align-right t2" src="assets/images/activity.svg" height="15px" width="15px" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="margin-left: 30px; font-family: 'Poppins';">
+
+    <div class="col col-xxl-8 align-right margin-left:20px">
+      <div class="row">
+        <div class="container">
+          <h1 style="margin-left: 15px; font-weight: bold;color: rgb(225, 166, 26) ;">Dashboard</h1>
+          <div class="row mt-0 pt-2 " style="margin-left: 8px;">
+            <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+              <div class="card" style="height: 21rem; width: 55rem;" *ngFor="let j of details">
+                <div class="card-header" style="font-size:medium; font-weight: bold;">
+                  Assigned Agent Details
+                </div>
+
+                <div class="card">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="assets/images/{{j.image}}" class="card-img-top" alt="Profile Image"
+                        style="height: 220px; width: 220px; margin-left: 29px; margin-top: 20px; padding-bottom: 20px;">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title" style="font-size:large;font-weight: bold;">{{j.agent_name}}</h5>
+                        <p class="card-text">
+                          <img src="assets/images/key.png" alt="Key Icon" style="height: 20px; width: 20px;">
+                          <span style="padding-left: 5px;">{{j.agent_id}}</span>
+                        </p>
+                        <p class="card-text">
+                          <img src="assets/images/gmail.png" alt="Gmail Icon" style="height: 16px; width: 16px;">
+                          <span style="padding-left: 5px;">{{j.email}}</span>
+                        </p>
+                        <p class="card-text">
+                          <img src="assets/images/phone.png" alt="Phone Icon" style="height: 16px; width: 16px;">
+                          <span style="padding-left: 5px;">{{j.phone_number}}</span>
+                        </p>
+                        <p class="card-text">
+                          <img src="assets/images/google-maps.png" alt="Google Maps Icon"
+                            style="height: 16px; width: 16px;">
+                          <span style="padding-left: 5px;">{{j.place}}</span>
+                        </p>
+                        <p class="card-text">
+                          <img src="assets/images/plastic-surgery.png" alt="Plastic Surgery Icon"
+                            style="height: 18px; width: 18px;">
+                          <span style="padding-left: 5px;">{{j.department}}</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

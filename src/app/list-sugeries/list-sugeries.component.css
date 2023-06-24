@@ -1,0 +1,138 @@
+.align-left {
+    float: left;
+}
+.align-right {
+    float: right;
+    
+}
+.card{
+    border: radius 0%; ;
+}
+.b1 {
+    margin-right: 10px;
+    background-color: rgb(255, 237, 189)
+}
+.b2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #362e9d;
+    margin-left: 0;
+    font-size: smaller;
+}
+.d1{
+    margin-left: 140px;
+    padding: 0;
+}
+.img1{
+    height: 15px;
+    width: 15px;
+    position: absolute;
+}
+.t1 {
+    margin-right: 10px;
+    height: 14px;
+    width: 15px;
+   
+}
+.t2{
+    font-size: small;
+ 
+}
+.t3{
+    font-size: small;
+    margin-left: 5px;
+}
+.t4{
+    font-size: small;
+    padding-top: 0;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+ background-color: #3e8e41;
+
+}
+.filter {
+
+    height: 30px;
+    width: 450px;
+    border: 2px rgba(239, 236, 236, 0.306) solid;
+    margin-left: 0px;
+    margin-top: 30px;
+}
+.filter h1 {
+    line-height: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 18px;
+    font-size: 16px;
+    text-align: left;
+}
+.type h1 {
+    height: 60px;
+    background-color: red;
+    width: 10px;
+    margin-top: 10px;
+    border: 2px rgba(172, 83, 83, 0.306) solid;
+    margin-left: 20px;
+}
+.icon-image {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+.searchbtn{
+    width: 9%;
+}
+.flex{
+    display: flex;
+}
+.form-check{
+    padding-left: 40px;
+    padding-top: 5px;
+}
+.f{
+    padding-left: 110px;
+    padding-top: 0px;
+    
+}
+.req h1 {
+line-height: 35px;   
+font-family: Arial, Helvetica, sans-serif;  
+margin-left: 0px; 
+font-size: 16px;
+text-align: left;
+}
+.hrline{
+height: 3px;
+width: 100px;
+margin-top: 30px;
+margin-left:-250px;
+border:none;background-color: rgb(255, 187, 0);
+opacity: 100%;
+}
+ 
+#card{
+    
+    padding-right:500px;
+    padding-left: 290px;
+    padding-top: 1px;
+   
+}  

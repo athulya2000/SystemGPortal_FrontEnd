@@ -1,0 +1,28 @@
+<div class="b-image">
+    <img src="assets/images/stryker logo.png" alt="">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-8 margin-right:2px" id="image">
+            <img src="assets/images/19836.jpg" alt="" style="width: 500px; height: 400px;">
+        </div>
+        <div class="col-4 align-right">
+            <div class="login-card">
+                <h6 style="padding-left: 25px; font-family: poppins;font-weight: bolder; color: rgb(225, 166, 26)">Welcome To Stryker Dealer Portal</h6>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+                    </div>
+                    <div class="form-group m" >
+                        <button (click)="readValues()" type="submit">Login</button>
+                    </div>
+                </form>
+            </div> 
+        </div>
+      </div>
+</div>
