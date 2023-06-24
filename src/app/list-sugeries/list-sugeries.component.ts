@@ -7,7 +7,16 @@ import { ApiService } from '../api.service';
   styleUrls: ['./list-sugeries.component.css']
 })
 export class ListSugeriesComponent {
- 
+  agent_name:any=""
+  priorityColor:any = {
+
+   'Very High': 'rgb(196, 17, 71)',
+    
+    'High': 'red',
+    
+    'Normal': 'green'
+    
+     };
 
   constructor(private api:ApiService){
     api.fetchSurgeries().subscribe(
@@ -27,5 +36,17 @@ export class ListSugeriesComponent {
         console.log(response)
       }
     )
+      this.api.viewAssignedAgentDetails(assigned_agent).subscribe(
+        (response:any)=>{
+         this.details=response
+         console.log(response)
+        }
+    )
+    }
+    details:any=[]
   }
-}
+  
+
+
+    
+

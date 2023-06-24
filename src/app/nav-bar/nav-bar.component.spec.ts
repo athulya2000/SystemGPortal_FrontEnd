@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavBarComponent } from './nav-bar.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { LoginComponent } from '../login/login.component';
+import { ListSugeriesComponent } from '../list-sugeries/list-sugeries.component';
+import { ApiService } from '../api.service';
 
 describe('NavBarComponent', () => {
   let component: NavBarComponent;
@@ -8,7 +12,9 @@ describe('NavBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavBarComponent ]
+      declarations: [ NavBarComponent,LoginComponent,ListSugeriesComponent ],
+      providers:[ApiService],
+      imports:[HttpClientTestingModule]
     })
     .compileComponents();
 

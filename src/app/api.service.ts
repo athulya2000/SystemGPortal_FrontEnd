@@ -14,4 +14,7 @@ export class ApiService {
  updateAssignedAgent=(dataToSend:any)=>{
   return this.http.put("http://localhost:8080/updateAssignedAgent",dataToSend)
  }
+ viewAssignedAgentDetails=(agent_name:any)=>{
+  return this.http.get("http://localhost:8080/agentDetails/"+agent_name)
+ }
 }
